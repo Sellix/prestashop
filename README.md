@@ -11,7 +11,7 @@ Prestashop package to use Sellix as a Payment Gateway.
 # Installation
 
 
-## Install the Package via Upload Module Dialog:
+## Install the Package via Upload Module Dialog:
 
 
 1. Navigate into Modules => Module Manager => Click Upload Module button => Select the package ([you can download it here](https://github.com/Sellix/prestashop/releases))
@@ -19,7 +19,7 @@ Prestashop package to use Sellix as a Payment Gateway.
 2. Click the Configure link to configure the module settings.
 
 
-## Install the Package via FTP upload:
+## Install the Package via FTP upload:
 
 
 1. Extract the package ([you can download it here](https://github.com/Sellix/prestashop/releases))
