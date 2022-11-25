@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>hitpay</name>
+    <displayName><![CDATA[HitPay]]></displayName>
+    <version><![CDATA[1.1.9]]></version>
+    <description><![CDATA[Accept secure PayNow QR, Credit Card, WeChatPay and AliPay payments.]]></description>
+    <author><![CDATA[HitPay]]></author>
+    <tab><![CDATA[payments_gateways]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
