@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>sellixpay</name>
+	<displayName><![CDATA[Sellix Pay]]></displayName>
+	<version><![CDATA[0.0.1]]></version>
+	<description><![CDATA[Accept Cryptocurrencies, Credit Cards, PayPal and regional banking methods with Sellix Pay.
+Sellix supports over 10+ different cryptocurrency payment methods. This includes the most popular ones such as Bitcoin, Ethereum, Bitcoin Cash, Litecoin, Solana, and more. We also support 5+ different fiat payment methods such as PayPal, Stripe, CashApp, and more.]]></description>
+	<author><![CDATA[Sellix.io]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>
