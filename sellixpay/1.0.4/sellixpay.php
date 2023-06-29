@@ -14,6 +14,8 @@ class SellixPay extends PaymentModule
 {
     public $tableName = 'sellixpay_orders';
 
+    private $container;
+
     protected $postErrors = [];
     protected $config_form = false;
 
@@ -35,6 +37,13 @@ class SellixPay extends PaymentModule
           This includes the most popular ones such as Bitcoin, Ethereum, Bitcoin Cash, Litecoin, Solana, and more. 
           We also support 5+ different fiat payment methods such as PayPal, Stripe, CashApp, and more.');
         $this->confirmUninstall = $this->l('Are you sure want to delete Sellix Pay?');
+
+        if ($this->container === null) {
+            $this->container = new \PrestaShop\ModuleLibServiceContainer\DependencyInjection\ServiceContainer(
+                $this->name,
+                $this->getLocalPath()
+            );
+        }
     }
 
     public function install()
@@ -54,7 +63,8 @@ class SellixPay extends PaymentModule
             $this->registerHook('displayPayment') &&
             $this->registerHook('displayPaymentReturn') &&
             $this->registerHook('actionDispatcher') &&
-            $this->registerHook('displayAdminOrder');
+            $this->registerHook('displayAdminOrder') &&
+            $this->getService('sellixpay.ps_accounts_installer')->install();
 
         if (!$install_result) {
           return false;
@@ -94,6 +104,16 @@ class SellixPay extends PaymentModule
         $output = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
 
         return $output . $this->renderForm();
+    }
+
+    /**
+     * Retrieve service
+     * @param string $serviceName
+     * @return mixed
+     */
+    public function getService($serviceName)
+    {
+        return $this->container->getService($serviceName);
     }
 
     /**

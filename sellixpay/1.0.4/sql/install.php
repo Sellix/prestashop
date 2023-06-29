@@ -25,7 +25,7 @@
 */
 $sql = [];
 
-$sql[] = "CREATE TABLE IF NOT EXISTS " . _DB_PREFIX_ . $this->module->tableName . "(
+$sql[] = "CREATE TABLE IF NOT EXISTS " . _DB_PREFIX_ . $this->tableName . "(
     id int not null auto_increment,
     order_id int(11),
     transaction_id varchar(255),

@@ -1,0 +1,24 @@
+services:
+  sellixpay.module:
+    class: sellixpay
+    public: true
+    factory: ['Module', 'getInstanceByName']
+    arguments:
+      - 'sellixpay'
+
+  sellixpay.context:
+    class: Context
+    public: true
+    factory: ['Context', 'getContext']
+
+  sellixpay.ps_accounts_installer:
+    class: 'PrestaShop\PsAccountsInstaller\Installer\Installer'
+    public: true
+    arguments:
+      - "5.0"
+
+  sellixpay.ps_accounts_facade:
+    class: 'PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts'
+    public: true
+    arguments:
+      - "@sellixpay.ps_accounts_installer"
